@@ -1,0 +1,181 @@
+{{ define "_overview.tmpl"}}
+
+<div role="tabpanel" class="tab-pane" id="dashboard">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 overview-sidebar">
+        <ul class="list-group muted-shadow">
+          <li class="list-group-header">
+            <img src="/assets/images/rocket.png" height="20" class="pr-2">
+            Loom Infinity Fabric</li>
+          <li class="list-group-item">DApp x 1</li>
+          <li class="list-group-item">5GB Storage</li>
+          <li class="list-group-item">500tx/sec</li>
+          <li class="list-group-item price bg-info">$15/month <a class="upgrade-button btn btn-outline-primary p-1" href="#upgrade-modal" data-toggle="modal">Upgrade Now..</a></li>
+        </ul>
+        <ul class="list-group mt-5 muted-shadow">
+          <li class="list-group-header">
+            <img src="/assets/images/weave@2x.png" height="20" class="pr-2">Weaves (Add Ons)</li>
+          <li class="list-group-item">Push Notification <span class="badge badge-info text-white">Trial</span></li>
+          <li class="list-group-item">Webhooks <span class="badge badge-info text-white">Trial</span></li>
+          <li class="list-group-item">Scheduler <span class="badge badge-info text-white">Trial</span></li>
+          <li class="list-group-item">Mailer <span class="badge badge-info text-white">Trial</span></li>
+          <li class="list-group-item price bg-info">$0/month <a class="upgrade-button btn btn-outline-primary p-1" href="#upgrade-modal" data-toggle="modal">Upgrade Now..</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6 content">
+
+        <div class="row statcards">
+          <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+            <div class="statcard statcard-success muted-shadow">
+              <div class="p-3">
+                <span class="statcard-desc">Read Txs</span>
+                <h2 class="statcard-number">00000<small class="delta-indicator delta-positive">0%</small></h2>
+                <hr class="statcard-hr mb-0">
+              </div>
+              <canvas id="sparkline1" width="378" height="94" class="sparkline" data-chart="spark-line" data-dataset="[[]]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+            <div class="statcard statcard-danger muted-shadow">
+              <div class="p-3">
+                <span class="statcard-desc">Write Txs</span>
+                <h2 class="statcard-number">00000<small class="delta-indicator delta-negative">0%</small></h2>
+                <hr class="statcard-hr mb-0">
+              </div>
+              <canvas id="sparkline1" width="378" height="94" class="sparkline" data-chart="spark-line" data-dataset="[[]]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+            <div class="statcard statcard-info muted-shadow">
+              <div class="p-3">
+                <span class="statcard-desc">Oracle Use</span>
+                <h2 class="statcard-number">00000<small class="delta-indicator delta-positive">0%</small></h2>
+                <hr class="statcard-hr mb-0">
+              </div>
+              <canvas id="sparkline1" width="378" height="94" class="sparkline" data-chart="spark-line" data-dataset="[[]]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3 mb-3 mb-md-4 mb-xl-0">
+            <div class="statcard statcard-warning muted-shadow">
+              <div class="p-3">
+                <span class="statcard-desc">Savings</span>
+                <h2 class="statcard-number">$0<small class="delta-indicator">@$293/ETH</small></h2>
+                <hr class="statcard-hr mb-0">
+              </div>
+              <canvas id="sparkline1" width="378" height="94" class="sparkline" data-chart="spark-line" data-dataset="[[]]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-md-6 mb-5">
+            <div class="list-group mb-3">
+              <h6 class="list-group-header">Top ABI Calls</h6>
+
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span class="list-group-progress" style="width: 62.4%;"></span>
+                <span>listKeyPairs</span>
+                <span class="text-muted">0%</span>
+              </a>
+
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span class="list-group-progress" style="width: 15.0%;"></span>
+                <span>isKeyAccessible</span>
+                <span class="text-muted">0%</span>
+              </a>
+
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span class="list-group-progress" style="width: 5.0%;"></span>
+                <span>SignInWith</span>
+                <span class="text-muted">0%</span>
+              </a>
+
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span class="list-group-progress" style="width: 5.0%;"></span>
+                <span>AddKeyPair</span>
+                <span class="text-muted">0%</span>
+              </a>
+
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span class="list-group-progress" style="width: 4.5%;"></span>
+                <span>RemoveKeyPair</span>
+                <span class="text-muted">0%</span>
+              </a>
+
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span class="list-group-progress" style="width: 2.3%;"></span>
+                <span>LastLoggedInForKey</span>
+                <span class="text-muted">0%</span>
+              </a>
+
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span class="list-group-progress" style="width: 1.7%;"></span>
+                <span>DeleteUser</span>
+                <span class="text-muted">0%</span>
+              </a>
+
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span class="list-group-progress" style="width: 1.5%;"></span>
+                <span>Stats</span>
+                <span class="text-muted">0%</span>
+              </a>
+            </div>
+            <a href="#metrics" role="tab" data-toggle="tab" class="btn btn-outline-primary px-3">View Metrics</a>
+          </div>
+          <div class="col-md-6 mb-5">
+            <div class="list-group mb-3" id="">
+              <h6 class="list-group-header">Deploy History</h6>
+
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span></span>
+                <span class="text-muted"></span>
+              </a>
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span></span>
+                <span class="text-muted"></span>
+              </a>
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span></span>
+                <span class="text-muted"></span>
+              </a>
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span></span>
+                <span class="text-muted"></span>
+              </a>
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span></span>
+                <span class="text-muted"></span>
+              </a>
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span></span>
+                <span class="text-muted"></span>
+              </a>
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span></span>
+                <span class="text-muted"></span>
+              </a>
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span></span>
+                <span class="text-muted"></span>
+              </a>
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span></span>
+                <span class="text-muted"></span>
+              </a>
+              <a class="list-group-item list-group-item-action justify-content-between d-flex" href="#">
+                <span></span>
+                <span class="text-muted"></span>
+              </a>
+            </div>
+            <a href="#deployment" role="tab" data-toggle="tab" class="btn btn-outline-primary px-3">View Deploy Log</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{template "_upgrade-modal.tmpl"}}
+
+{{end}}
