@@ -1,9 +1,0 @@
-.DS_Store
-tmp_uploads
-upload_tmp
-vendor/
-letsencrypt.cache
-tmp/
-node_modules
-.idea*
-*.iml
